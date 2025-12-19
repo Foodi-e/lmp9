@@ -11,7 +11,7 @@
 // porownanie kolumn i rzedow
 
 
-int eliminate(Matrix *mat, Matrix *b){
+int eliminate(Matrix *b, Matrix *mat){
 	int liczbaR = b->r;
 	int liczbaC = b->c;
 	

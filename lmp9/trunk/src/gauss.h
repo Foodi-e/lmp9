@@ -7,6 +7,6 @@
  * Zwraca 0 - elimnacja zakonczona sukcesem
  * Zwraca 1 - macierz osobliwa - dzielenie przez 0
  */
-int eliminate(Matrix *mat, Matrix *b);
+int eliminate(Matrix *matryca, Matrix *wyniki);
 
 #endif

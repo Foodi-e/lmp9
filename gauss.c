@@ -11,28 +11,32 @@
 // porownanie kolumn i rzedow
 
 
-int eliminate(Matrix *b, Matrix *mat){
-	int liczbaR = b->r;
-	int liczbaC = b->c;
+int eliminate(Matrix *matryca, Matrix *wyniki){
+	int liczbaR = matryca->r;
+	int liczbaC = matryca->c;
 	
-
-	if(liczbaC!=liczbaR) return 0;
+	
+	if(liczbaC!=liczbaR||wyniki->r != liczbaR||wyniki->c != 1) return 1;
+	
+	
 
 	int i ,j,k;
 	double ratio;
 	for(i=0;i<liczbaC;i++){
+		
+		if(fabs(matryca->data[i][i])<0.0001) return 1;
+		
 		for(j=i;j<liczbaR;j++){
 			if(j>i){
-				ratio = b->data[j][i]/b->data[i][i];
+				ratio = matryca->data[j][i]/matryca->data[i][i];
 				for(k=0;k<liczbaC;k++){
-					b->data[j][k] = b->data[j][k]-ratio *b->data[i][k];
+					matryca->data[j][k] = matryca->data[j][k]-ratio *matryca->data[i][k];
 					
 				}
-				mat->data[j][0] = mat->data[j][0]-ratio*mat->data[i][0];
+				wyniki->data[j][0] = wyniki->data[j][0]-ratio*wyniki->data[i][0];
 				
 			}
 		}
-		if(b->data[i][i]==0) return 0;
 	}
 	
 	return 0;	

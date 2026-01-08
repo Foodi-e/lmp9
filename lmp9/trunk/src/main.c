@@ -47,8 +47,7 @@ void testy() {
 }
 
 int main(int argc, char ** argv) {
-	///1980273091hdwufos
-	
+      
 	if (argc < 3) {
         testy();
         printf("Użycie: %s [macierz] [wektor]\n", argv[0]);
